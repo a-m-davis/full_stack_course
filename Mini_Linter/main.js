@@ -4,30 +4,30 @@ let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
 
-// Splits story string into individual words and stores them in a new array
-const storyWords = story.split(' ');
 
-//Filters out words that are in the unnecessaryWords array
+const storyWords = story.split(' ');
+//console.log(storyWords.length);
+
 const betterWords = storyWords.filter(word => {
   return !unnecessaryWords.includes(word);
 });
 
-// Counts the number of times the overusedWords appear in storyWords
-let reallyCount = 0;
-let veryCount = 0;
-let basicallyCount = 0;
+// console.log(betterWords);
+
+const overusedWordsObject = {
+  really: 0,
+  very: 0,
+  basically: 0,
+};
 
 for (word of storyWords){
-  if (word === 'really'){
-    reallyCount +=1;
-  } else if (word === 'very'){
-    veryCount +=1;
-  } else if (word === 'basically'){
-    basicallyCount +=1;
+  if (word in overusedWordsObject){
+    overusedWordsObject[word]++
   }
 };
 
-// Counts the number of sentences by counting punctuation
+// console.log(reallyCount, veryCount, basicallyCount);
+
 let periodCount = 0;
 let exclamationCount = 0;
 let questionCount = 0;
@@ -42,13 +42,14 @@ for (word of storyWords){
   }
 };
 
+// console.log(periodCount, exclamationCount, questionCount);
 let totalSentences = periodCount + exclamationCount + questionCount
 
-// Logs to the console information about the paragraph
 console.log('The total number of words is: ', storyWords.length);
 console.log('The total number of sentences is: ', totalSentences);
-console.log(`The total number of times 'really' was used: ${reallyCount}`);
-console.log(`The total number of times 'very' was used: ${veryCount}`);
-console.log(`The total number of times 'basically' was used: ${basicallyCount}`);
+
+for (let key in overusedWordsObject){
+  console.log(`The number of time '${key}' was used: ${overusedWordsObject[key]}`)
+};
 
 console.log(betterWords.join(' '));
