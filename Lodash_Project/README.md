@@ -1,26 +1,30 @@
 # Lodash Project
 
-Implement the following methods from Lodash:
+## Introduction
 
-.clamp()
+Implement functionality from lodash.js, which provides many methods that add new functionality for numbers, strings, objects, and arrays. 
 
-.inRange()
+### Implement the following methods from Lodash:
 
-.words()
-
-.pad()
-
-.has()
-
-.invert()
-
-.findKey()
-
-.drop()
-
-.dropWhile()
-
-.chunk()
+>.clamp()
+>
+>.inRange()
+>
+>.words()
+>
+>.pad()
+>
+>.has()
+>
+>.invert()
+>
+>.findKey()
+>
+>.drop()
+>
+>.dropWhile()
+>
+>.chunk()
 
 ## Tests
 
